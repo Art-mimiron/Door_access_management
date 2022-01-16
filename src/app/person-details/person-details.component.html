@@ -1,0 +1,13 @@
+<form [formGroup]="form" (ngSubmit)="onSave()">
+  <mat-form-field appearance="fill">
+    <mat-label>Full name</mat-label>
+    <input formControlName="fullName" matInput>
+    <mat-error *ngIf="form.invalid">
+      Full name is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <div style="margin-top: 15px">
+    <button mat-flat-button color="primary" type="submit">Save</button>
+  </div>
+</form>

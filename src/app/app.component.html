@@ -1,0 +1,25 @@
+<mat-toolbar color="primary" class="toolbar-container">
+  <button
+    (click)="drawer.toggle()"
+    mat-icon-button
+    aria-label="icon-button with menu icon">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>Door access management tool</span>
+</mat-toolbar>
+
+<mat-drawer-container class="drawer-container">
+  <mat-drawer #drawer mode="side">
+    <div class="nav-list-container">
+      <mat-nav-list>
+        <a routerLink="/persons" mat-list-item>Persons</a>
+        <a mat-list-item>Doors</a>
+      </mat-nav-list>
+    </div>
+  </mat-drawer>
+  <mat-drawer-content>
+    <div class="content-container">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>
