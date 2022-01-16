@@ -8,7 +8,7 @@ It provides the following functionality:
 
 ## Challenge
 
-In this project is already implement the logic of viewing and editing persons. You need to implement similar logic for doors.
+In this project is already implement the logic of viewing and editing persons. You need to implement similar logic for doors and add a possibility to give access permissions to people.
 Doors and persons must be connected with many-to-many association. To do this, implement `DoorAccessService` along with `DoorService`.
 `DoorAccessService` must store and manage references to persons and doors that different people have access to.
 
