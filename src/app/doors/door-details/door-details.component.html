@@ -1,0 +1,27 @@
+<form [formGroup]="form" style="display: flex; flex-direction: column">
+  <mat-form-field appearance="fill">
+    <mat-label>Door name</mat-label>
+    <input formControlName="doorName" matInput>
+    <mat-error *ngIf="form.invalid">
+      Door name is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Have access:</mat-label>
+    <mat-select formControlName="users" multiple>
+      <mat-option *ngFor="let user of persons" [value]="user">{{user.fullName}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <div style="margin-top: 15px">
+    <button
+      mat-flat-button
+      color="primary"
+      [disabled]="form.invalid"
+      (click)="onSubmit()"
+      type="button">
+      Save
+    </button>
+  </div>
+</form>
