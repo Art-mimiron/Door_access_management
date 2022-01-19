@@ -1,10 +1,17 @@
-<form [formGroup]="form" (ngSubmit)="onSave()">
+<form [formGroup]="form" (ngSubmit)="onSave()" style="display: flex; flex-direction: column">
   <mat-form-field appearance="fill">
     <mat-label>Full name</mat-label>
     <input formControlName="fullName" matInput>
     <mat-error *ngIf="form.invalid">
       Full name is <strong>required</strong>
     </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Have access to:</mat-label>
+    <mat-select formControlName="doors" multiple>
+      <mat-option *ngFor="let door of doors" [value]="door">{{door.name}}</mat-option>
+    </mat-select>
   </mat-form-field>
 
   <div style="margin-top: 15px">
